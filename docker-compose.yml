@@ -1,0 +1,17 @@
+version: "2"
+services:
+ publicationsms:
+  build: .
+  ports:
+   - "3000:3000"
+  depends_on:
+   - publicationsDB
+ publicationsDB:
+  image: mysql:5.7
+  environment:
+   MYSQL_ROOT_PASSWORD: password
+   MYSQL_DATABASE: publicationsDB
+   MYSQL_USER: root
+   MYSQL_PASSWORD: password
+  ports:
+   - "3306:3306"
