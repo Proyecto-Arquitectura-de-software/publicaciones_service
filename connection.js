@@ -1,12 +1,13 @@
 const mysql  = require ("mysql");
 
 var mysqlConection = mysql.createConnection({
-    host : 'localhost',
+    host : 'publicationsDB',
     user : 'root',
     password : 'password',
     database : 'publicationsDB',
-    multipleStatements : true,
+    multipleStatements : true
 
+    
 
 });
 
