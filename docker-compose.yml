@@ -3,7 +3,7 @@ services:
  publicationsms:
   build: .
   ports:
-   - "3200:3200"
+   - "3400:3400"
   depends_on:
    - publicationsDB
  publicationsDB:
