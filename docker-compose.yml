@@ -3,7 +3,7 @@ services:
  publicationsms:
   build: .
   ports:
-   - "3400:3400"
+   - "3000:3000"
   depends_on:
    - publicationsDB
  publicationsDB:
@@ -14,4 +14,4 @@ services:
    MYSQL_USER: root
    MYSQL_PASSWORD: password
   ports:
-   - "3306:3306"
+   - "3400:3306"
