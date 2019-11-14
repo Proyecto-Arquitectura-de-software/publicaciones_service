@@ -6,7 +6,6 @@ var mysqlConection = mysql.createConnection({
     password : 'password',
     database : 'publicationsDB',
     multipleStatements : true
-
     
 
 });
@@ -28,7 +27,7 @@ mysqlConection.connect ((err)=>{
                 }
             });
             mysqlConection.query("use publicationsDB");
-            var createTable = "CREATE TABLE IF NOT EXISTS publications (publicationID INT AUTO_INCREMENT PRIMARY KEY, establishmentID INT, name VARCHAR(50), description VARCHAR(255), price FLOAT, image MEDIUMTEXT);";
+            var createTable = "CREATE TABLE IF NOT EXISTS publications (publicationID INT AUTO_INCREMENT PRIMARY KEY, establishmentID VARCHAR(255), name VARCHAR(50), description VARCHAR(255), price FLOAT, image LONGTEXT);";
         
             mysqlConection.query(createTable, function (err,result){
                 if(err)

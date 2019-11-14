@@ -18,19 +18,45 @@ Router.get("/", (req,res)=>{
     })
 
 });
+Router.get('/:publicationID', async (req,res) => { 
 
+    const query = 'SELECT * FROM publications WHERE publicationID = ?';
 
-Router.get("/:publicationID", (req,res)=>{
-    mysqlConnection.query ("SELECT * FROM publications WHERE publicationID ="+req.params.publicationID, (err, results)=>{
+    await mysqlConnection.query(query, [req.params.publicationID], (err, results) => { 
         if (err)
             {
-                console.log(err);
+                console.log('Error: ' + err);
+                res.send(err);                
             }
         else
             {
+                
+                
                 res.send(results);
             }
-    });
+    })
+
+});
+
+
+
+Router.get('/establishment/:establishmentID', async (req,res) => { 
+
+    const query = 'SELECT * FROM publications WHERE establishmentID = ?';
+
+    await mysqlConnection.query(query, [req.params.establishmentID], (err, results) => { 
+        if (err)
+            {
+                console.log('Error: ' + err);
+                res.send(err);                
+            }
+        else
+            {
+                
+                
+                res.send(results);
+            }
+    })
 
 });
 
